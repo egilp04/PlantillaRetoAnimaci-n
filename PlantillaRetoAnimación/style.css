@@ -49,6 +49,10 @@ main {
   justify-content: center;
   align-items: flex-end;
 }
+.animal-container span {
+  height: 50%;
+  text-align: center;
+}
 
 #rat-sprite-sheet {
   width: 90px;
@@ -82,15 +86,6 @@ main {
   }
 }
 
-@keyframes rotateRat {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes movePaws {
   0%,
   100% {
@@ -114,10 +109,22 @@ main {
 
 @keyframes moveAnimal {
   0% {
-    transform: translateX(-100px);
+    transform: translateX(-310px);
   }
 
   100% {
     transform: translateX(300px);
   }
+}
+
+#loading-container > div:last-child {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  animation: moveAnimal 4s linear infinite;
+  background: linear-gradient(#d444f4ff, #44c5f4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 2rem;
+  font.weight: bold;
 }
