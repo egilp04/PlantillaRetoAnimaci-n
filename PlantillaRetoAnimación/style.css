@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-container {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.paw-container {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.paw-container img {
+  height: 100%;
+  object-fit: contain;
+}
+
+#paw-1 {
+  animation: movePaws 2s infinite, hidePaws 2s infinite;
+}
+#paw-2 {
+  animation: movePaws 2s infinite 0.3s, hidePaws 2s infinite 0.3s;
+}
+#paw-3 {
+  animation: movePaws 2s infinite 0.5s, hidePaws 2s infinite 0.5s;
+}
+
+.animal-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#rat-sprite-sheet {
+  width: 90px;
+  height: 40px;
+  overflow: hidden;
+  animation: moveAnimal 4s linear infinite;
+}
+
+#cat-sprite-sheet {
+  width: 160px;
+  height: 70px;
+  overflow: hidden;
+  animation: moveAnimal 4s linear infinite;
+}
+#cat-sprite-sheet img {
+  animation: changeCat 1s steps(4) infinite;
+}
+#rat-sprite-sheet img {
+  height: 88px;
+  width: 533px;
+  animation: changeRat 1s steps(6) infinite;
+}
+@keyframes changeCat {
+  to {
+    transform: translateX(-630px);
+  }
+}
+@keyframes changeRat {
+  to {
+    transform: translateX(-533px);
+  }
+}
+
+@keyframes rotateRat {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes movePaws {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes hidePaws {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveAnimal {
+  0% {
+    transform: translateX(-100px);
+  }
+
+  100% {
+    transform: translateX(300px);
+  }
+}
