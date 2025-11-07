@@ -34,13 +34,13 @@ main {
 }
 
 #paw-1 {
-  animation: movePaws 2s infinite, hidePaws 2s infinite;
+  animation: movePaws 3s infinite, hidePaws 3s infinite;
 }
 #paw-2 {
-  animation: movePaws 2s infinite 0.3s, hidePaws 2s infinite 0.3s;
+  animation: movePaws 3s infinite 0.3s, hidePaws 3s infinite 0.3s;
 }
 #paw-3 {
-  animation: movePaws 2s infinite 0.5s, hidePaws 2s infinite 0.5s;
+  animation: movePaws 3s infinite 0.5s, hidePaws 3s infinite 0.5s;
 }
 
 .animal-container {
@@ -48,10 +48,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-}
-.animal-container span {
-  height: 50%;
-  text-align: center;
 }
 
 #rat-sprite-sheet {
@@ -89,10 +85,10 @@ main {
 @keyframes movePaws {
   0%,
   100% {
-    transform: translateY(0);
+    transform: rotate(0deg) scale(0.5);
   }
   50% {
-    transform: translateY(-20px);
+    transform: rotate(360deg) scale(1);
   }
 }
 
@@ -115,16 +111,4 @@ main {
   100% {
     transform: translateX(300px);
   }
-}
-
-#loading-container > div:last-child {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  animation: moveAnimal 4s linear infinite;
-  background: linear-gradient(#d444f4ff, #44c5f4ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  font-size: 2rem;
-  font.weight: bold;
 }
